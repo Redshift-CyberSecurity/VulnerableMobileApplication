@@ -1,6 +1,7 @@
 package com.redshift.rs_vapourtraining;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.webkit.JavascriptInterface;
@@ -16,6 +17,7 @@ import com.android.volley.toolbox.Volley;
 public class WebAppInterface {
     Context mContext;
     private DBHandler dbHandler;
+
 
     /** Instantiate the interface and set the context */
     WebAppInterface(Context c) {
@@ -33,7 +35,7 @@ public class WebAppInterface {
     @JavascriptInterface
     public void getCredits(int numCredits){
         RequestQueue ExampleRequestQueue = Volley.newRequestQueue(mContext);
-        dbHandler = new DBHandler(mContext);
+
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
         String userID = prefs.getString("userRS", ""); //vuln
         String RS_IP = prefs.getString("RS_IP", ""); //vuln
@@ -42,15 +44,32 @@ public class WebAppInterface {
             @Override
             public void onResponse(String response) {
                 dbHandler.updateCredits(userID, dbHandler.getCreds(userID)+Integer.parseInt(response)); //hehehehe
+                Intent intent = new Intent(mContext, NavigationComponent.class);
+                intent.putExtra("username",dbHandler.checkUser(userID));
+                mContext.startActivity(intent);
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 //This code is executed if there is an error.
+                Intent intent = new Intent(mContext, NavigationComponent.class);
+                intent.putExtra("username",dbHandler.checkUser(userID));
+                Toast.makeText(mContext, "An error has occured. ", Toast.LENGTH_SHORT).show();
+                mContext.startActivity(intent);
             }
         });
 
         ExampleRequestQueue.add(ExampleStringRequest);
+    }
+
+    @JavascriptInterface
+    public void getBack(){
+        dbHandler = new DBHandler(mContext);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
+        String userID = prefs.getString("userRS", ""); //vuln
+        Intent intent = new Intent(mContext, NavigationComponent.class);
+        intent.putExtra("username",dbHandler.checkUser(userID));
+        mContext.startActivity(intent);
     }
 
 }
