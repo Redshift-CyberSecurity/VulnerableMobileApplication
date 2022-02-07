@@ -25,5 +25,9 @@ def buycredit(card_name):
 def requestcredits(numCredits):
     return str(numCredits)
 
+@app.route("/buygame/<int:numCredits>")
+def buygame():
+    return "Succesful"
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)

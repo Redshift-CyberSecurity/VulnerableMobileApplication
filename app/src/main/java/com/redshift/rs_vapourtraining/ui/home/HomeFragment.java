@@ -67,8 +67,10 @@ public class HomeFragment extends Fragment {
         cText = root.findViewById(R.id.credits_amount);
         gText = root.findViewById(R.id.games_amount); //title2Home
         tText = root.findViewById(R.id.title2Home);
+        //bText = root.findViewById(R.id.games_amount);
         cText.setText(String.valueOf(dbHandler.getCreds(userID)));
         tText.setText(String.valueOf(dbHandler.checkUser(userID)));
+        gText.setText(String.valueOf(productModalArrayList.size()));
         return root;
     }
 
