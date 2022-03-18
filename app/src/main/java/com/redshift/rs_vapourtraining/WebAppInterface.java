@@ -18,6 +18,13 @@ public class WebAppInterface {
     Context mContext;
     private DBHandler dbHandler;
 
+   /* public void updateCreds()
+    {
+        int requestedcreds = Integer.parseInt(response);
+        int mycreds = dbHandler.getCreds(userID);
+        int totalcreds = requestedcreds+mycreds;
+        dbHandler.updateCredits(userID, mycreds);
+    }*/
 
     /** Instantiate the interface and set the context */
     WebAppInterface(Context c) {
@@ -35,17 +42,21 @@ public class WebAppInterface {
     @JavascriptInterface
     public void getCredits(int numCredits){
         RequestQueue ExampleRequestQueue = Volley.newRequestQueue(mContext);
-
+        dbHandler = new DBHandler(mContext);
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
         String userID = prefs.getString("userRS", ""); //vuln
         String RS_IP = prefs.getString("RS_IP", ""); //vuln
         String url = "http://"+RS_IP+":5000/requestcredits/"+String.valueOf(numCredits);
+        String userName = dbHandler.checkUser(userID);
+        SharedPreferences.Editor editor = prefs.edit();
         StringRequest ExampleStringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                dbHandler.updateCredits(userID, dbHandler.getCreds(userID)+Integer.parseInt(response)); //hehehehe
+                 //hehehehe
+                editor.putString("userbuyCredits",response);
+                editor.commit();
                 Intent intent = new Intent(mContext, NavigationComponent.class);
-                intent.putExtra("username",dbHandler.checkUser(userID));
+                intent.putExtra("username",userName);
                 mContext.startActivity(intent);
             }
         }, new Response.ErrorListener() {

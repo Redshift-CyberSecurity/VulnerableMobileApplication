@@ -71,6 +71,7 @@ public class NavigationComponent extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
         dbHandler = new DBHandler(NavigationComponent.this);
+
         String IPaddress = getLocalIpAddress();
         getServer(IPaddress);
         String username = getIntent().getStringExtra("username");
@@ -80,6 +81,7 @@ public class NavigationComponent extends AppCompatActivity {
             editor.putString("userRS","1"); //vuln
             editor.commit();
         }
+
     }
 
     @Override
@@ -141,5 +143,7 @@ public class NavigationComponent extends AppCompatActivity {
 
         ExampleRequestQueue.add(ExampleStringRequest);
     }
+
+
 
 }

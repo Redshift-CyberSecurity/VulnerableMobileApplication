@@ -69,6 +69,7 @@ public class Login extends AppCompatActivity {
                 SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
                 SharedPreferences.Editor editor = prefs.edit();
                 editor.putString("userRS",dbHandler.getUserID(autheruser)); //vuln
+                editor.putString("userbuyCredits","0");
                 editor.commit();
                 startActivity(intent);
             }else{

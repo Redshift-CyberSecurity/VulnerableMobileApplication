@@ -54,7 +54,7 @@ public class HomeFragment extends Fragment {
 
         productModalArrayList = new ArrayList<>();
         dbHandler = new DBHandler(getActivity());
-
+        updateCreds();
         productModalArrayList = dbHandler.getOwnedGames(userID);
         if (productModalArrayList != null) {
             productRVAdapter = new ProductAdaptor(productModalArrayList, getActivity());
@@ -70,8 +70,24 @@ public class HomeFragment extends Fragment {
         //bText = root.findViewById(R.id.games_amount);
         cText.setText(String.valueOf(dbHandler.getCreds(userID)));
         tText.setText(String.valueOf(dbHandler.checkUser(userID)));
-        gText.setText(String.valueOf(productModalArrayList.size()));
+        try{
+            gText.setText(String.valueOf(productModalArrayList.size()));
+        }catch (Exception e){
+            gText.setText(String.valueOf(0));
+        }
+
         return root;
     }
 
+    public void updateCreds(){
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        String boughtCreds = prefs.getString("userbuyCredits", "");
+        String userID = prefs.getString("userRS", ""); //vuln
+        int requestedcreds = Integer.parseInt(boughtCreds);
+        int mycreds = dbHandler.getCreds(userID);
+        dbHandler.updateCredits(userID, mycreds+requestedcreds);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("userbuyCredits","0");
+        editor.commit();
+    }
 }
