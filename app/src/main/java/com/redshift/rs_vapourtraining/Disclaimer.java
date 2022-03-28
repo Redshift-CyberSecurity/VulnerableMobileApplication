@@ -71,7 +71,7 @@ public class Disclaimer extends AppCompatActivity {
         EditText editIP = (EditText) findViewById(R.id.ipAddress);
         String ipAddress = editIP.getText().toString();
         if(!getServer(ipAddress)){
-            Toast.makeText(Disclaimer.this, "Server is offline.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Disclaimer.this, "Wait a second.", Toast.LENGTH_SHORT).show();
         }
     }
 
