@@ -14,6 +14,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 import android.widget.Button;
 
+import java.io.File;
+
 public class Login extends AppCompatActivity {
     String Tag = "Redshift_Training_App";
     private String adminUser = "admin";
@@ -62,7 +64,7 @@ public class Login extends AppCompatActivity {
             return;
         }else{
             String autheruser = dbHandler.checkUser(name, psswrd); // Vuln
-            if (autheruser != null){
+            if (autheruser != null && !isRooted()){
                 Toast.makeText(getApplicationContext(),"Welcome "+ autheruser,Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(this, NavigationComponent.class);
                 intent.putExtra("username",autheruser);
@@ -72,6 +74,8 @@ public class Login extends AppCompatActivity {
                 editor.putString("userbuyCredits","0");
                 editor.commit();
                 startActivity(intent);
+            }else if(isRooted()){
+                Toast.makeText(Login.this, "Phone is rooted, Please uninstall application.", Toast.LENGTH_SHORT).show();
             }else{
                 Toast.makeText(Login.this, "User or password not valid ", Toast.LENGTH_SHORT).show();
             }
@@ -82,6 +86,26 @@ public class Login extends AppCompatActivity {
         Intent intent = new Intent(this, Register.class);
         startActivity(intent);
         //Open register window
+    }
+
+    public static boolean findBinary(String binaryName) {
+        boolean found = false;
+        if (!found) {
+            String[] places = { "/sbin/", "/system/bin/", "/system/xbin/",
+                    "/data/local/xbin/", "/data/local/bin/",
+                    "/system/sd/xbin/", "/system/bin/failsafe/", "/data/local/" };
+            for (String where : places) {
+                if (new File(where + binaryName).exists()) {
+                    found = true;
+                    break;
+                }
+            }
+        }
+        return found;
+    }
+
+    private static boolean isRooted() {
+        return findBinary("su");
     }
 
 }
