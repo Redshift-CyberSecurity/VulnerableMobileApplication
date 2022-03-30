@@ -16,3 +16,5 @@ This repository contains several mobile applications that are vulnerable to vari
 
 **Note the Vapour api server requires python to run**
 
+Vapour, the intentionally vulnerable Android application, has the following vulnerabilities:
+![RedshiftVulnerableApplication](https://user-images.githubusercontent.com/69678541/160786268-9f2dfecd-9ccb-42ab-bc16-79facedbdd70.png)
