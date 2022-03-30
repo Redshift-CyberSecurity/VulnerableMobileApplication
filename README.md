@@ -1,9 +1,9 @@
 # VulnerableMobileApplications
 This repository contains several mobile applications that are vulnerable to various exploits and misconfigurations.
 
-##How to use
+## How to use
 
-####Certificate Pinning Bypass Application
+#### Certificate Pinning Bypass Application
 1. Download latest release version of the application.
 2. Install APK on an android device (Preferably an emulated Pixel 4 Device)
 3. Enjoy
