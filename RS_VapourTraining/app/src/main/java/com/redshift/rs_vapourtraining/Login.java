@@ -35,10 +35,10 @@ public class Login extends AppCompatActivity {
         if (!prefs.getBoolean("firstTime2", false)) {
             // <---- run your one time code here
             dbHandler.addNewUser(adminUser,adminPass, 10000);
-            dbHandler.addNewProduct("game1","very cool game", "https://news.xbox.com/en-us/wp-content/uploads/w=940,h=9999/sites/2/2021/07/lost_01.jpg", "$6", 6);
-            dbHandler.addNewProduct("game2","very not cool game", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLLxFu415NRfnLvfV1ar34IJTe9Z2lH7y9Cg&usqp=CAU", "$6", 6);
-            dbHandler.addNewProduct("game3","very pretty cool game", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-On8ytqpfFwEU84Fktv_T5rCmSQmQv-EhcQ&usqp=CAU", "$6", 6);
-            dbHandler.addNewProduct("game4","very meh game", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQajvEnyslYEGMUBTKckfVGZRnK6PJSumbAPQ&usqp=CAU", "$6", 6);
+            dbHandler.addNewProduct("game1","very cool game", "https://images.unsplash.com/photo-1641239844090-fa80f6dd6ea6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80", "$6", 6);
+            dbHandler.addNewProduct("game2","very not cool game", "https://images.unsplash.com/photo-1648670329793-e542dbe65bb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1631&q=80", "$6", 6);
+            dbHandler.addNewProduct("game3","very pretty cool game", "https://images.unsplash.com/photo-1648634362534-238cb091708b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1886&q=80", "$6", 6);
+            dbHandler.addNewProduct("game4","very meh game", "https://images.unsplash.com/photo-1648569732633-3b2671226347?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80", "$6", 6);
             dbHandler.addCreditCard("1","0000000000000000","234","12/26","Admin");
             // mark first time has ran.
             SharedPreferences.Editor editor = prefs.edit();
