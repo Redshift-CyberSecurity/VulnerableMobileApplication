@@ -5,3 +5,10 @@ Certificate Pinning is an advanced certificate trust mechanism which enables the
 Most mobile application's today has some form of certificate pinning enabled. This application could be used to learn how to bypass common certificate pinning with the help of Frida tools.
 
 This application was created as part of Redshift mobile training series that will soon be posted on Redshift YouTube channel. In this training series we will go over how to sucessfully exploit this application with the help of Objection.
+
+## How to use
+
+### Certificate Pinning Bypass Application
+1. Download latest release version of the application.
+2. Install APK on an android device (Preferably an emulated Pixel 4 Device)
+3. Enjoy
