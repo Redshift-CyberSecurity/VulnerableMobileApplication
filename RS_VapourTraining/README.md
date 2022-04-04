@@ -10,6 +10,10 @@ Vapour has the following vulnerabilities:
 
 ![RedshiftVulnerableApplication](https://user-images.githubusercontent.com/69678541/160786268-9f2dfecd-9ccb-42ab-bc16-79facedbdd70.png)
 
+## Download
+The Vapour Android apk could be downloaded under the "Releases" tab (https://github.com/Redshift-CyberSecurity/VulnerableMobileApplication/releases).
+
+
 ## How to use
 
 ### The Vapour Vulnerable Traing Application
