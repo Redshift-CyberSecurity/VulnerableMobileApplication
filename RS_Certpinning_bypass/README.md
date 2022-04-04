@@ -1,4 +1,4 @@
-### RS_Certpinning_bypass - Android Mobile Application
+# RS_Certpinning_bypass - Android Mobile Application
 
 Certificate Pinning is an advanced certificate trust mechanism which enables the client-side application to validate provided certificates. This means the mobile application only trusts its own stored certificates and rejects untrustworthy certificates, even the certificates in the mobile device’s trust store.
 
