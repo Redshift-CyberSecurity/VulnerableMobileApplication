@@ -3,6 +3,9 @@ This repository contains several mobile applications that are vulnerable to vari
 
 Redshift's goal with this project is to help develop cyber security maturity in the mobile application domain, by teaching developers and hackers alike some of the basics behind common programming mistakes, the vulnerabilities it creates, and how an adversary may exploit these vulnerabilities for their own personal gain.
 
+## Download
+Both Vapour and the certificate pinning application as well as the Vapour's python server could be downloaded under the "Releases" tab.
+
 ## RS_VapourTraining
 An intentionally vulnerable Android application that's vulnerable to common mobile vulnerabilities and weaknesses. This mobile application also requires the below mentioned python server to be running.
 
