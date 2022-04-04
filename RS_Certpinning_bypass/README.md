@@ -6,6 +6,9 @@ Most mobile application's today has some form of certificate pinning enabled. Th
 
 This application was created as part of Redshift mobile training series that will soon be posted on Redshift YouTube channel. In this training series we will go over how to sucessfully exploit this application with the help of Objection.
 
+## Download
+The certificate pinning application could be downloaded under the "Releases" tab (https://github.com/Redshift-CyberSecurity/VulnerableMobileApplication/releases).
+
 ## How to use
 
 ### Certificate Pinning Bypass Application
