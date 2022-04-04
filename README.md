@@ -1,5 +1,16 @@
 # VulnerableMobileApplications
-This repository contains several mobile applications that are vulnerable to various exploits and misconfigurations.
+This repository contains several mobile applications that are vulnerable to various exploits and misconfigurations. This includes Redshift's intentionally vulnerable android application (Vapour), a python server for the Vapour applcation and an SSL bypass android application.
+
+These applications were created as part of a mobile pentesting training series to help grow and improve the mobile cyber security spcae. Each application's descriptions and details could be found in their respective folders as well as their use/funtionality and/or the vulnerabilities associated with them.
+
+### RS_VapourTraining
+An intentionally vulnerable Android application that's vulnerable to common mobile vulnerabilities and weaknesses. This mobile application also requires the below mentioned python server to be running.
+
+### RS_VapourTraining_app_server
+The intentionally vulnerabile Android application, Vapour's python server. This python server also generated a IP address that should be used in the Vapour application.
+
+### RS_Certpinning_bypass
+A mobile application that could be used to learn how to bypass basic certificate pinning.
 
 ## How to use
 
@@ -16,8 +27,3 @@ This repository contains several mobile applications that are vulnerable to vari
 
 **Note the Vapour api server requires python to run**
 
-## Vapour
-
-Vapour, the intentionally vulnerable Android application, has the following vulnerabilities:
-
-![RedshiftVulnerableApplication](https://user-images.githubusercontent.com/69678541/160786268-9f2dfecd-9ccb-42ab-bc16-79facedbdd70.png)
