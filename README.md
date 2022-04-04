@@ -3,13 +3,13 @@ This repository contains several mobile applications that are vulnerable to vari
 
 Redshift's goal with this project is to help develop cyber security maturity in the mobile application domain, by teaching developers and hackers alike some of the basics behind common programming mistakes, the vulnerabilities it creates, and how an adversary may exploit these vulnerabilities for their own personal gain.
 
-### RS_VapourTraining
+## RS_VapourTraining
 An intentionally vulnerable Android application that's vulnerable to common mobile vulnerabilities and weaknesses. This mobile application also requires the below mentioned python server to be running.
 
-### RS_VapourTraining_app_server
+## RS_VapourTraining_app_server
 The intentionally vulnerabile Android application, Vapour's python server. This python server also generated a IP address that should be used in the Vapour application.
 
-### RS_Certpinning_bypass
+## RS_Certpinning_bypass
 A mobile application that could be used to learn how to bypass basic certificate pinning.
 
 ## How to use
